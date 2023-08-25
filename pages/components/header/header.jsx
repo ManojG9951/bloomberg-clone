@@ -265,6 +265,7 @@ const Navbar = () => {
       <Col className="color-mode">
         <div>
           <input
+          readOnly
             onClick={(e) => colorModeHandler(e)}
             className="m-2"
             type="checkbox"

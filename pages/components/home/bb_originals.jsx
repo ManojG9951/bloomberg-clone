@@ -44,9 +44,9 @@ function BBOriginals({ articles }) {
                 height="100%"
                 src="https://www.youtube.com/embed/x3tV44iS2KQ?autoplay=1&mute=1"
                 title="YouTube video player"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
             </Col>
             <Col xs={12} md={6} lg={4}>
