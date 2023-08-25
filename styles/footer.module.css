@@ -1,0 +1,18 @@
+.mainContainer p {
+    font-size: 12px;
+}
+.mainContainer {
+    background-color: #fff;
+    padding: 10px;
+    border-top: 1px solid;
+}
+.linkItems {
+    text-decoration: none;
+    color: grey;
+}
+.linkItems p {
+    color: white;
+}
+.linkItems:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,76 @@
+/* .mainContainer {
+    padding: 10px;
+    padding: 0px !important;
+    background-color: black;
+    margin: 0px;
+    position: fixed;
+    top: 0;
+    transition: top 0.3s;
+    z-index: 9999;
+}
+.mainContainer.hidden {
+    top: -100px;
+} */
+
+.navbar {
+  padding: 10px;
+  /* padding: 0px !important; */
+  /* background-color: black; */
+  margin: 0px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: top 0.3s;
+  z-index: 9999;
+}
+
+.hidden {
+  top: -100px;
+}
+
+/* Add your own styles for the navbar elements here */
+/* 
+.mainContainer h1 {
+  color: white;
+}
+.mainContainer h6 {
+  color: white;
+} */
+
+.mainContainer select {
+  /* background-color: black; */
+  padding: 5px;
+  border: 0px;
+}
+
+.category_tab {
+  text-decoration: none;
+  color: white;
+  /* color: grey; */
+  font-size: 17px;
+  cursor: pointer;
+  text-align: center;
+  margin: 0px;
+  width: min-content;
+  padding: 0px 10px 0px 10px;
+  transition: all 0.3s ease-in;
+}
+.category_tab:hover {
+  font-weight: 600;
+  /* color: white; */
+}
+.category_tab_container_main {
+  background-color: transparent;
+  /* padding: 0px 15px 0px 15px; */
+  border: 1px solid #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 0px;
+}
+.category_tab_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px;
+}
