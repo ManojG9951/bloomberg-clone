@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import styles from "../../../styles/home.module.css";
+import styles from "@/styles/home.module.css";
 import Link from "next/link";
 import { useSelector, useDispatch } from "react-redux";
 import { setSelectedNews } from "@/src/store";

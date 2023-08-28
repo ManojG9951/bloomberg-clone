@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
-import styles from "../../../styles/home.module.css";
+import styles from "@/styles/home.module.css";
 
 const bbo_list = [5, 6, 7, 8];
 
