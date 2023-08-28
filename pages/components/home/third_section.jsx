@@ -47,7 +47,7 @@ function ThirdSection({ articles }) {
                     index === 2 ? "d-none d-lg-block" : "d-block"
                   } ${styles.third_section_firstrow_content}`}
                 >
-                  <p className="p-0">{articles[each].source.name}</p>
+                  <p className="p-0">{articles === undefined ? "" : articles[each].source.name}</p>
                   <Link
                     onClick={() =>
                       handleNewsChange(JSON.stringify(articles[each]))
@@ -55,15 +55,15 @@ function ThirdSection({ articles }) {
                     className={`linkTags ${
                       colorMode ? "dark-mode" : "light-mode"
                     } `}
-                    href={`news/${articles[each].title}`}
+                    href={`news/${articles === undefined ? "" : articles[each].title}`}
                   >
                     <h6
                       className={`${colorMode ? "dark-mode" : "light-mode"} `}
                     >
-                      {articles[each].title}
+                      {articles === undefined ? "" : articles[each].title}
                     </h6>
                   </Link>
-                  <p className="p-0">{articles[each].publishedAt}</p>
+                  <p className="p-0">{articles === undefined ? "" : articles[each].publishedAt}</p>
                 </Col>
               );
             })}
@@ -83,7 +83,7 @@ function ThirdSection({ articles }) {
                     index === 2 ? "d-none d-lg-block" : "d-block"
                   } ${styles.third_section_firstrow_content}`}
                 >
-                  <p className="p-0">{articles[each].source.name}</p>
+                  <p className="p-0">{articles === undefined ? "" : articles[each].source.name}</p>
                   <Link
                     onClick={() =>
                       handleNewsChange(JSON.stringify(articles[each]))
@@ -94,10 +94,10 @@ function ThirdSection({ articles }) {
                     <h6
                       className={`${colorMode ? "dark-mode" : "light-mode"} `}
                     >
-                      {articles[each].title}
+                      {articles === undefined ? "" : articles[each].title}
                     </h6>
                   </Link>
-                  <p className="p-0">{articles[each].publishedAt}</p>
+                  <p className="p-0">{articles === undefined ? "" : articles[each].publishedAt}</p>
                 </Col>
               );
             })}
@@ -109,31 +109,31 @@ function ThirdSection({ articles }) {
             <Col xs={12} md={6} lg={12} xl={6}>
               <div
                 className={styles.mainHomeHeadingImage}
-                style={{ backgroundImage: `url(${articles[11]?.urlToImage})` }}
+                style={{ backgroundImage: `url(${articles === undefined ? "" : articles[11]?.urlToImage})` }}
               />
             </Col>
             <Col xs={12} md={6} lg={12} xl={6}>
               <Col className={styles.third_section_secondrow_content}>
-                <p className="p-0 text-secondary">{articles[11].source.name}</p>
+                <p className="p-0 text-secondary">{articles === undefined ? "" : articles[11].source.name}</p>
                 <Link
-                  onClick={() => handleNewsChange(JSON.stringify(articles[11]))}
+                  onClick={() => handleNewsChange(JSON.stringify(articles === undefined ? "" : articles[11]))}
                   className={`${
                     colorMode ? "dark-mode" : "light-mode"
                   } linkTags`}
                   href="news/11"
                 >
-                  <h4>{articles[11].title}</h4>
+                  <h4>{articles === undefined ? "" : articles[11].title}</h4>
                 </Link>
-                <p className="p-0 text-secondary">{articles[11].publishedAt}</p>
+                <p className="p-0 text-secondary">{articles === undefined ? "" : articles[11].publishedAt}</p>
               </Col>
               <p style={{ borderBottom: "1px dotted black" }}>
-                {articles[11].author}
+                {articles === undefined ? "" : articles[11].author}
               </p>
               <p style={{ borderBottom: "1px dotted black" }}>
-                {articles[11].content}
+                {articles === undefined ? "" : articles[11].content}
               </p>
               <p style={{ borderBottom: "1px dotted black" }}>
-                {articles[11].description}
+                {articles === undefined ? "" : articles[11].description}
               </p>
             </Col>
           </Row>
@@ -151,11 +151,11 @@ function ThirdSection({ articles }) {
                     }`}
                   >
                     <p className="p-0 text-secondary">
-                      {articles[each].source.name}
+                      {articles === undefined ? "" : articles[each].source.name}
                     </p>
                     <Link
                       onClick={() =>
-                        handleNewsChange(JSON.stringify(articles[each]))
+                        handleNewsChange(JSON.stringify(articles === undefined ? "" : articles[each]))
                       }
                       className={`${
                         colorMode ? "dark-mode" : "light-mode"
@@ -166,11 +166,11 @@ function ThirdSection({ articles }) {
                         className={`${colorMode ? "dark-mode" : "light-mode"} `}
                         style={{ fontWeight: "700" }}
                       >
-                        {articles[each].title}
+                        {articles === undefined ? "" : articles[each].title}
                       </h6>
                     </Link>
                     <p className="p-0 text-secondary">
-                      {articles[each].publishedAt}
+                      {articles === undefined ? "" : articles[each].publishedAt}
                     </p>
                   </Col>
                 );
@@ -191,7 +191,7 @@ function ThirdSection({ articles }) {
                       <div
                         className={styles.third_section_third_row_img}
                         style={{
-                          backgroundImage: `(${articles[each]?.urlToImage})`,
+                          backgroundImage: `url(${articles === undefined ? "" : articles[each].urlToImage})`,
                         }}
                       />
                       <div>
@@ -199,11 +199,11 @@ function ThirdSection({ articles }) {
                           className={`p-2 ${styles.third_section_firstrow_content}`}
                         >
                           <p className="p-0 text-secondary">
-                            {articles[each].source.name}
+                            {articles === undefined ? "" : articles[each].source.name}
                           </p>
                           <Link
                             onClick={() =>
-                              handleNewsChange(JSON.stringify(articles[each]))
+                              handleNewsChange(JSON.stringify(articles === undefined ? "" : articles[each]))
                             }
                             className={`${
                               colorMode ? "dark-mode" : "light-mode"
@@ -215,11 +215,11 @@ function ThirdSection({ articles }) {
                                 colorMode ? "dark-mode" : "light-mode"
                               } `}
                             >
-                              {articles[each].title}
+                              {articles === undefined ? "" : articles[each].title}
                             </h6>
                           </Link>
                           <p className="p-0 text-secondary">
-                            {articles[each].publishedAt}
+                            {articles === undefined ? "" : articles[each].publishedAt}
                           </p>
                         </Col>
                       </div>
@@ -239,21 +239,21 @@ function ThirdSection({ articles }) {
           <div className={styles.third_section_third_row}>
             <div
               className={styles.third_section_third_row_img}
-              style={{ backgroundImage: `url(${articles[23]?.urlToImage})` }}
+              style={{ backgroundImage: `url(${articles === undefined ? "" : articles[23]?.urlToImage})` }}
             />
             <div>
               <Col className={`p-2 ${styles.third_section_firstrow_content}`}>
-                <p className="p-0 text-secondary">{articles[23].source.name}</p>
+                <p className="p-0 text-secondary">{articles === undefined ? "" : articles[23].source.name}</p>
                 <Link
-                  onClick={() => handleNewsChange(JSON.stringify(articles[23]))}
+                  onClick={() => handleNewsChange(JSON.stringify(articles === undefined ? "" : articles[23]))}
                   className={`${
                     colorMode ? "dark-mode" : "light-mode"
                   } linkTags`}
                   href={`news/23`}
                 >
-                  <h6>{articles[23].title}</h6>
+                  <h6>{articles === undefined ? "" : articles[23].title}</h6>
                 </Link>
-                <p className="p-0">{articles[23].publishedAt}</p>
+                <p className="p-0">{articles === undefined ? "" : articles[23].publishedAt}</p>
               </Col>
             </div>
           </div>
@@ -272,10 +272,10 @@ function ThirdSection({ articles }) {
                   key={each}
                   className={styles.third_section_firstrow_content}
                 >
-                  <h6 className="text-primary">{articles[each].source.name}</h6>
+                  <h6 className="text-primary">{articles === undefined ? "" : articles[each].source.name}</h6>
                   <Link
                     onClick={() =>
-                      handleNewsChange(JSON.stringify(articles[each]))
+                      handleNewsChange(JSON.stringify(articles === undefined ? "" : articles[each]))
                     }
                     className={`${
                       colorMode ? "dark-mode" : "light-mode"
@@ -285,7 +285,7 @@ function ThirdSection({ articles }) {
                     <h6
                       className={`${colorMode ? "dark-mode" : "light-mode"} `}
                     >
-                      {articles[each].title}
+                      {articles === undefined ? "" : articles[each].title}
                     </h6>
                   </Link>
                 </Col>

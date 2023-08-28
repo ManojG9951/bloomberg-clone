@@ -40,7 +40,7 @@ function Headlines({ News, text }) {
                 <div
                   className={styles.third_section_third_row_img}
                   style={{
-                    backgroundImage: `url(${News[each]?.urlToImage})`,
+                    backgroundImage: `url(${News === undefined ? "" : News[each]?.urlToImage})`,
                   }}
                 />
                 <div>
@@ -49,7 +49,7 @@ function Headlines({ News, text }) {
                     style={{ border: "none" }}
                   >
                     <p className="p-0 text-secondary">
-                      {News[each]?.source.name}
+                      {News === undefined ? "" : News[each]?.source.name}
                     </p>
                     <Link
                       onClick={() =>
@@ -60,10 +60,10 @@ function Headlines({ News, text }) {
                       } linkTags`}
                       href={`news/${each}`}
                     >
-                      <h6>{News[each].title}</h6>
+                      <h6>{News === undefined ? "" : News[each].title}</h6>
                     </Link>
                     <p className="p-0 text-secondary">
-                      {News[each]?.publishedAt}
+                      {News === undefined ? "" : News[each]?.publishedAt}
                     </p>
                   </Col>
                 </div>

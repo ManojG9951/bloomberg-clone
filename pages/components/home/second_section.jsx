@@ -23,7 +23,7 @@ function SecondSection({ articles }) {
         <Col xs={12} md={5} lg={4}>
           <div
             className={styles.mainHomeHeadingImage}
-            style={{ backgroundImage: `url(${articles[1]?.urlToImage})` }}
+            style={{ backgroundImage: `url(${articles === undefined ? "" : articles[1]?.urlToImage})` }}
           />
         </Col>
         <Col>
@@ -37,10 +37,10 @@ function SecondSection({ articles }) {
             >
               <h1 className={`${colorMode ? "dark-mode" : "light-mode"}`}>
                 <span className="text-danger">.LIVE </span>
-                {articles[1].title.slice(0, 60)}...
+                {articles === undefined ? "" : articles[1].title.slice(0, 60)}...
               </h1>
             </Link>
-            <p>{articles[1].publishedAt}</p>
+            <p>{articles === undefined ? "" : articles[1].publishedAt}</p>
           </Col>
           <Col
             className={`${styles.mainHomeHeadingContainerTwo} m-0`}
@@ -65,9 +65,9 @@ function SecondSection({ articles }) {
                       }`}
                       href={`news/${each}`}
                     >
-                      <h5>{articles[each].title}</h5>
+                      <h5>{articles === undefined ? "" : articles[each].title}</h5>
                     </Link>
-                    <p>{articles[each].publishedAt}</p>
+                    <p>{articles === undefined ? "" : articles[each].publishedAt}</p>
                   </Col>
                 );
               })}

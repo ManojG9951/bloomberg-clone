@@ -30,8 +30,8 @@ function BBOriginals({ articles }) {
               {bbo_list.map((each) => {
                 return (
                   <Col key={each} xs={12} md={6} lg={12} className={styles.bboriginals_first_row_content}>
-                    <p className="text-secondary">{articles[each].source.name}</p>
-                    <h5>{articles[each].title.slice(0,30)}...</h5>
+                    <p className="text-secondary">{articles === undefined ? "" : articles[each].source.name}</p>
+                    <h5>{articles === undefined ? "" : articles[each].title.slice(0,30)}...</h5>
                   </Col>
                 );
               })}
@@ -51,10 +51,10 @@ function BBOriginals({ articles }) {
             </Col>
             <Col xs={12} md={6} lg={4}>
               <Col>
-                <p className="text-secondary">{articles[0].source.name}</p>
-                <h5>{articles[0].title}</h5>
+                <p className="text-secondary">{articles === undefined ? "" : articles[0].source.name}</p>
+                <h5>{articles === undefined ? "" : articles[0].title}</h5>
                 <h6>
-                  {articles[0].content}
+                  {articles === undefined ? "" : articles[0].content}
                 </h6>
                 <Col className="my-3">
                   <button className={`${colorMode ? "btn btn-outline-light":"btn btn-outline-dark"}`}>
