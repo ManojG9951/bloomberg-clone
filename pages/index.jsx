@@ -13,7 +13,7 @@ import { setLoading } from "../src/store";
 import { setMoreNews } from "../src/store";
 import Link from "next/link";
 
-const api_key = "c3da55865f6d4416bf76b03eefd1c597";
+const api_key = "eea7b03c003a4702aabbe284367fc4d4";
 
 const list_api_keys = [
   "c3da55865f6d4416bf76b03eefd1c597",
