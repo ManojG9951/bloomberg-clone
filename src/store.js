@@ -22,6 +22,8 @@ const SET_LOADING = "SET_LOADING";
 
 const SET_MORE_NEWS = "SET_MORE_NEWS";
 
+const SET_SIGN_IN_WORD = "SET_SIGN_IN_WORD";
+
 // Reducer
 
 const initialState = {
@@ -38,6 +40,8 @@ const initialState = {
   apiKey: "c3da55865f6d4416bf76b03eefd1c597",
 
   moreNews: [],
+
+  signInWord: "",
 };
 
 const tabReducer = (state = initialState, action) => {
@@ -82,6 +86,13 @@ const tabReducer = (state = initialState, action) => {
         ...state,
 
         moreNews: action.payload,
+      };
+
+    case SET_SIGN_IN_WORD:
+      return {
+        ...state,
+
+        signInWord: action.payload,
       };
 
     default:
@@ -135,6 +146,13 @@ export const setMoreNews = (news) => {
   return {
     type: SET_MORE_NEWS,
     payload: news,
+  };
+};
+
+export const setSignInWord = (word) => {
+  return {
+    type: SET_SIGN_IN_WORD,
+    payload: word,
   };
 };
 // Create Redux store

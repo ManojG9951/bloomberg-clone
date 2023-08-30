@@ -105,6 +105,12 @@ a {
     color-scheme: dark;
   }
 }
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 .mainContainer {
   /* height: 100vh; */
   padding: 0px !important;
@@ -332,4 +338,26 @@ p {
 .error_btn:hover{
   color: lightblue;
   text-decoration: underline;
+}
+.sign_in_mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  padding: 15% 0% 15% 0%;
+}
+.sign_in_innerContainer {
+  height: auto;
+  border: 1px dotted;
+  width: auto;
+  padding: 30px;
+}
+.sign_in_input {
+  padding: 1px 5px 1px 5px;
+  margin: 5px 0px 5px 0px;
+  width: 300px;
+}
+.sign_in_input:focus {
+  outline: none;
 }

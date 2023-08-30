@@ -11,6 +11,7 @@ import { useRouter } from "next/router";
 
 const Navbar = () => {
   const router = useRouter();
+  const { more_news } = router.query;
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [region, setRegion] = useState("in");
   const [language, setLanguage] = useState("en");
@@ -39,6 +40,7 @@ const Navbar = () => {
     dispatch(setColorMOde(e.target.checked));
   };
   useEffect(() => {
+    console.log(more_news);
     const handleScroll = () => {
       const currentScrollPos = window.pageYOffset;
 
@@ -70,7 +72,7 @@ const Navbar = () => {
         </Col>
         <Col xs={7} lg={4}>
           <Row xs={12}>
-            <Col
+            {/* <Col
               xs={6}
               className="d-lg-none d-flex flex-column justify-content-center align-items-center"
             >
@@ -93,10 +95,12 @@ const Navbar = () => {
                 <option value="city">City</option>
                 <option value="crypto">Crypto</option>
               </select>
-            </Col>
+            </Col> */}
             <Col
               xs={6}
-              className="d-flex flex-column justify-content-center align-items-center"
+              className={`${
+                more_news === undefined ? "d-flex" : "d-none"
+              } flex-column justify-content-center align-items-center`}
             >
               <select
                 value={selectedLanguage}
@@ -122,7 +126,9 @@ const Navbar = () => {
               lg={2}
               className="d-none d-lg-flex flex-column justify-content-center align-items-center"
             >
-              <h6>SignIn</h6>
+              <Link className="linkTags" href="/sign_in">
+              <h6 className="text-light">SignIn</h6>
+              </Link>
             </Col>
             <Col
               lg={4}
@@ -133,10 +139,7 @@ const Navbar = () => {
           </Row>
         </Col>
       </Row>
-      <Col
-        xs={12}
-        className={`d-none d-lg-block ${styles.category_tab_container_main}`}
-      >
+      <Col xs={12} className={`${styles.category_tab_container_main}`}>
         <div className={`${styles.category_tab_container} d-flex`}>
           <Link
             href="/"
@@ -265,7 +268,7 @@ const Navbar = () => {
       <Col className="color-mode">
         <div>
           <input
-          readOnly
+            readOnly
             onClick={(e) => colorModeHandler(e)}
             className="m-2"
             type="checkbox"
