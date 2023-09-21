@@ -4,13 +4,15 @@ import { Col, Container, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import Link from "next/link";
 
-
 function Footer() {
-  const loadingCheck = useSelector((state) => state.loading)
+  const loadingCheck = useSelector((state) => state.loading);
   return (
-    <Container fluid className={`bg-dark ${styles.mainContainer} ${
-      loadingCheck ? "d-none" : "d-block"
-    }`}>
+    <Container
+      fluid
+      className={`bg-dark ${styles.mainContainer} ${
+        loadingCheck ? "d-none" : "d-block"
+      }`}
+    >
       <Col>
         <Row className="d-flex justify-content-around">
           <Col xs={12} md={5}>
@@ -41,7 +43,9 @@ function Footer() {
             <Row>
               <Col>
                 <Link href="" className={styles.linkItems}>
-                  <p>@Bloomberg 2023 This Site Has been Cloned By Manoj Gundi</p>
+                  <p>
+                    @Bloomberg 2023 This Site Has been Cloned By Manoj Gundi
+                  </p>
                 </Link>
               </Col>
             </Row>

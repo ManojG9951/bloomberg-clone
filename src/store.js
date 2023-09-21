@@ -41,7 +41,7 @@ const initialState = {
 
   moreNews: [],
 
-  signInWord: "",
+  signInWord: [],
 };
 
 const tabReducer = (state = initialState, action) => {
@@ -92,7 +92,7 @@ const tabReducer = (state = initialState, action) => {
       return {
         ...state,
 
-        signInWord: action.payload,
+        signInWord: [action.payload],
       };
 
     default:

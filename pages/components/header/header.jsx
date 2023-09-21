@@ -5,7 +5,12 @@ import { useEffect, useState } from "react";
 // import { useDispatch } from "react-redux";
 // import { setCounter } from "@/pages/store";
 import { useSelector, useDispatch } from "react-redux";
-import { setActiveTab, setSelectedLanguage, setColorMOde } from "@/src/store";
+import {
+  setActiveTab,
+  setSelectedLanguage,
+  setColorMOde,
+  setSignInWord,
+} from "@/src/store";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -23,6 +28,7 @@ const Navbar = () => {
   const selectedLanguage = useSelector((state) => state.selectedLanguage);
   const colorModeCheck = useSelector((state) => state.colorMode);
   const loadingCheck = useSelector((state) => state.loading);
+  const signInWord = useSelector((state) => state.signInWord);
   const dispatch = useDispatch();
 
   const handleTabChange = (tab) => {
@@ -68,10 +74,24 @@ const Navbar = () => {
     >
       <Row className="d-flex justify-content-around align-items-center">
         <Col lg={8} xs={5}>
-          <h1>Bloomberg</h1>
+          <h1>
+            Bloomberg{" "}
+            <span>
+              <p>
+                {signInWord[0] === undefined
+                  ? ""
+                  : signInWord[0].length === 0
+                  ? ""
+                  : `${JSON.parse(signInWord[0]).name}`}
+              </p>
+            </span>
+          </h1>
         </Col>
-        <Col xs={7} lg={4}>
-          <Row xs={12}>
+        <Col xs={3} lg={4}>
+          <Row
+            xs={12}
+            className="d-flex justify-content-center align-items-center"
+          >
             {/* <Col
               xs={6}
               className="d-lg-none d-flex flex-column justify-content-center align-items-center"
@@ -123,19 +143,57 @@ const Navbar = () => {
               </select>
             </Col>
             <Col
-              lg={2}
-              className="d-none d-lg-flex flex-column justify-content-center align-items-center"
+              xs={12}
+              md={2}
+              className="d-lg-flex flex-column justify-content-center align-items-center"
             >
-              <Link className="linkTags" href="/sign_in">
-              <h6 className="text-light">SignIn</h6>
+              <Link
+                className={`${
+                  signInWord[0] === undefined
+                    ? "d-block"
+                    : signInWord[0].length === 0
+                    ? "d-block"
+                    : "d-none"
+                } linkTags`}
+                href="/sign_up"
+              >
+                <h6 className="text-light">SignIn/SignUp</h6>
+              </Link>
+              <Link
+                className={`${
+                  signInWord[0] === undefined
+                    ? "d-none"
+                    : signInWord[0].length === 0
+                    ? "d-none"
+                    : "d-block"
+                } linkTags`}
+                href="/"
+              >
+                <h6
+                  className="text-light"
+                  onClick={() => {
+                    // console.log(signInWord)
+                    dispatch(setSignInWord([]));
+                  }}
+                >
+                  SignOut
+                </h6>
               </Link>
             </Col>
-            <Col
+            {/* <Col className="my-2">
+              <button
+                onClick={() => console.log(JSON.parse(signInWord[0]).name)}
+                className={`btn btn-outline-secondary`}
+              >
+                console
+              </button>
+            </Col> */}
+            {/* <Col
               lg={4}
               className="d-none d-lg-flex flex-column justify-content-center align-items-center"
             >
               <button className={`btn btn-outline-light`}>Subscribe</button>
-            </Col>
+            </Col> */}
           </Row>
         </Col>
       </Row>

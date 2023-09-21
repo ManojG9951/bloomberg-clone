@@ -11,7 +11,6 @@ function Index() {
   const [parsedNews] = useState(
     selectedNews.length > 0 ? [JSON.parse(selectedNews)] : []
   );
- 
 
   return (
     <>

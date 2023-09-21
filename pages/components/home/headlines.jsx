@@ -40,7 +40,9 @@ function Headlines({ News, text }) {
                 <div
                   className={styles.third_section_third_row_img}
                   style={{
-                    backgroundImage: `url(${News === undefined ? "" : News[each]?.urlToImage})`,
+                    backgroundImage: `url(${
+                      News === undefined ? "" : News[each]?.urlToImage
+                    })`,
                   }}
                 />
                 <div>

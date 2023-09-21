@@ -48,6 +48,7 @@ function Home({
   const activeTab = useSelector((state) => state.activeTab);
   const loadingCheck = useSelector((state) => state.loading);
   const selectedLanguage = useSelector((state) => state.selectedLanguage);
+  const signInWord = useSelector((state) => state.signInWord);
 
   const apiKeyHandler = () => {
     if (apiKeyNum < 3) {
@@ -107,6 +108,7 @@ function Home({
 
   useEffect(() => {
     fetchingData();
+    console.log(signInWord);
   }, [selectedLanguage]);
   useEffect(() => {
     fetchingData();
@@ -134,16 +136,19 @@ function Home({
           <Footer />
         </>
       ) : (
-        <Container>
-          <Col className="error_btn text-dark">
-            <h1>
-              Your Api Key Expired Please Change to New One
-              {/* <Link onClick={apiKeyHandler} className="text-dark" href="/">
+        <>
+          <Header />
+          <Container>
+            <Col className="error_btn text-dark">
+              <h1>
+                Your Api Key Expired Please Change to New One
+                {/* <Link onClick={apiKeyHandler} className="text-dark" href="/">
                 <h5>Click Here to Change</h5>
               </Link> */}
-            </h1>
-          </Col>
-        </Container>
+              </h1>
+            </Col>
+          </Container>
+        </>
       )}
     </>
   );

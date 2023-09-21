@@ -61,7 +61,11 @@ function MoreNews() {
                 <div
                   className="more_news_section_1_Image"
                   style={{
-                    backgroundImage: `url(${categoryNews[0].urlToImage === "" ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg":categoryNews[0].urlToImage}`,
+                    backgroundImage: `url(${
+                      categoryNews[0].urlToImage === ""
+                        ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg"
+                        : categoryNews[0].urlToImage
+                    }`,
                   }}
                 />
               </Col>
@@ -101,7 +105,11 @@ function MoreNews() {
                         <div
                           className="more_news_section_RC_Images"
                           style={{
-                            backgroundImage: `url(${categoryNews[each].urlToImage === "" ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg":categoryNews[each].urlToImage}`,
+                            backgroundImage: `url(${
+                              categoryNews[each].urlToImage === ""
+                                ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg"
+                                : categoryNews[each].urlToImage
+                            }`,
                           }}
                         />
                         <Col
@@ -174,7 +182,11 @@ function MoreNews() {
                           <div
                             className="more_news_section_2_Image"
                             style={{
-                              backgroundImage: `url(${categoryNews[each].urlToImage === "" ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg":categoryNews[each].urlToImage})`,
+                              backgroundImage: `url(${
+                                categoryNews[each].urlToImage === ""
+                                  ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg"
+                                  : categoryNews[each].urlToImage
+                              })`,
                             }}
                           />
                         </Col>
@@ -249,7 +261,11 @@ function MoreNews() {
                       <div
                         className="more_news_section_3_Image"
                         style={{
-                          backgroundImage: `url(${categoryNews[each].urlToImage === "" ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg":categoryNews[each].urlToImage})`,
+                          backgroundImage: `url(${
+                            categoryNews[each].urlToImage === ""
+                              ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg"
+                              : categoryNews[each].urlToImage
+                          })`,
                         }}
                       />
                     </Col>
@@ -316,7 +332,11 @@ function MoreNews() {
                         <div
                           className="more_news_section_3_Image"
                           style={{
-                            backgroundImage: `url(${each.urlToImage === "" ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg":each.urlToImage})`,
+                            backgroundImage: `url(${
+                              each.urlToImage === ""
+                                ? "https://fscl01.fonpit.de/userfiles/7687254/image/X_WeChat.jpg"
+                                : each.urlToImage
+                            })`,
                           }}
                         />
                       </Col>
