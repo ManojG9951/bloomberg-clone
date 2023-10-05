@@ -13,6 +13,7 @@ import {
 } from "@/src/store";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Toggler from "../toggler";
 
 const Navbar = () => {
   const router = useRouter();
@@ -324,7 +325,7 @@ const Navbar = () => {
         </div>
       </Col>
       <Col className="color-mode">
-        <div>
+        {/* <div>
           <input
             readOnly
             onClick={(e) => colorModeHandler(e)}
@@ -333,7 +334,8 @@ const Navbar = () => {
             checked={colorModeCheck ? true : false}
           />
           Dark Mode
-        </div>
+        </div> */}
+        <Toggler/>
       </Col>
     </Container>
   );
